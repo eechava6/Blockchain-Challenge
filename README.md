@@ -5,6 +5,17 @@ Marketplace which accepts criptocurrency.
 
 -> [Architecture](architecture.md):
 
+## Running the app: 
+
+### Prerequisites
+
+* NodeJs (NPM)
+
+### Installing the dependencies: 
+
+* `npm i -g ganecha-cli` (In-memory blockchain) 
+* `npm i -g solc` (Javascript bindings to Solidity compiler)
+* `npm i` Extra dependencias (Not needed global) (Ethereum wallet and Server for now) 
 
 This application used the following sources: 
 
