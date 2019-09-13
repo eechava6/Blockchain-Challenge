@@ -20,10 +20,10 @@ Marketplace which accepts criptocurrency.
 
 ### Runnning the app: 
 
-* ganache-cli -p 7545 (Run a local blockchain on port 7545) 
-* truffle compile (Compile .sol files) 
-* truffle migrate (Deploys contract to Ethereum network)
-* npm run dev (Run application on port 3000) 
+* `ganache-cli -p 7545` (Run a local blockchain on port 7545) 
+* `truffle compile` (Compile .sol files) 
+* `truffle migrate` (Deploys contract to Ethereum network)
+* `npm run dev` (Run application on port 3000) 
 
 This application used the following sources: 
 
