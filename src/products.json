@@ -1,0 +1,51 @@
+[
+    {
+      "id": 0,
+      "name": "Airpods",
+      "picture": "images/airpods.jpg",
+      "price": "0.82"
+    },
+    {
+      "id": 1,
+      "name": "Bass Plus",
+      "picture": "images/bass.jpeg",
+      "price": "0.574"
+    },
+    {
+      "id": 2,
+      "name": "Bose buds",
+      "picture": "images/bose.jpeg",
+      "price":"0.934"
+    },
+    {
+      "id": 3,
+      "name": "Pamu Slide",
+      "picture": "images/pamu.jpeg",
+      "price":"0.342"
+    },
+    {
+      "id": 4,
+      "name": "Galaxy buds",
+      "picture": "images/buds.jpeg",
+      "price":"0.456"
+    },
+    {
+      "id": 5,
+      "name": "Huawei buds",
+      "picture": "images/huawei.jpeg",
+      "price": "0.124"
+    },
+    {
+      "id": 6,
+      "name": "Power Beats",
+      "picture": "images/powerbeats.jpg",
+      "price": "0.354"
+    },
+    {
+      "id": 7,
+      "name": "MLK",
+      "picture": "images/mlk.jpg",
+      "price": "0.644"
+    }
+  ]
+  

@@ -3,20 +3,19 @@ App = {
   contracts: {},
 
   init: async function() {
-    // Load pets.
-    $.getJSON('../pets.json', function(data) {
-      var petsRow = $('#petsRow');
-      var petTemplate = $('#petTemplate');
+    // Load the products
+    $.getJSON('../products.json', function(data) {
+      var productsRow = $('#productsRow');
+      var productTemplate = $('#productTemplate');
 
       for (i = 0; i < data.length; i ++) {
-        petTemplate.find('.panel-title').text(data[i].name);
-        petTemplate.find('img').attr('src', data[i].picture);
-        petTemplate.find('.pet-breed').text(data[i].breed);
-        petTemplate.find('.pet-age').text(data[i].age);
-        petTemplate.find('.pet-location').text(data[i].location);
-        petTemplate.find('.btn-adopt').attr('data-id', data[i].id);
+        productTemplate.find('.panel-title').text(data[i].name);
+        productTemplate.find('img').attr('src', data[i].picture);
+        productTemplate.find('.product-type').text(data[i].type);
+        productTemplate.find('.product-price').text(data[i].price);
+        productTemplate.find('.btn-buy').attr('data-id', data[i].id);
 
-        petsRow.append(petTemplate.html());
+        productsRow.append(productTemplate.html());
       }
     });
 
