@@ -1,3 +1,4 @@
+
 App = {
   web3Provider: null,
   contracts: {},
@@ -13,8 +14,8 @@ App = {
         productTemplate.find('img').attr('src', data[i].picture);
         productTemplate.find('.product-type').text(data[i].type);
         productTemplate.find('.product-price').text(data[i].price);
-        productTemplate.find('.btn-buy').attr('data', data[i].id);
-
+        productTemplate.find('.btn-buy').attr('price', data[i].price);
+        productTemplate.find('.btn-buy').attr('id', data[i].id);
         productsRow.append(productTemplate.html());
       }
     });
@@ -68,6 +69,7 @@ App = {
   },
 
   showBalance: function() {
+
     var metaStoreInstance;
 
     App.contracts.MetaStore.deployed().then(function(instance) {
@@ -75,30 +77,48 @@ App = {
     
       return metaStoreInstance.moneyReached.call();
     }).then(function(moneyReached) {
-      console.log("The store has :" + moneyReached)
+      console.log("The store has :" + parseInt(moneyReached)/10e17 + " ETH")
     }).catch(function(err) {
       console.log(err.message);
     });
   },
 
+  handleHistory: function(event){
+    console.log("err here")
+    App.contracts.MetaStore.deployed().then(function(instance) {
+      metaStoreInstance = instance
+      let transferEvent = metaStoreInstance.LogProductBought({}, {fromBlock: 0, toBlock: 'latest'})
+      transferEvent.get((error, logs) => {
+      // print the logs
+      console.log("HISTORY")
+      logs.forEach(log => console.log(log.args))
+      if(error){
+        console.log(error)
+      }
+    });
+    
+    });
+  },
+
   handleBuy: function(event) {
     event.preventDefault();
-    console.log(event)
-    var price = parseInt($(event.target).data('data-id'));
-    console.log(price)
+    var price = $(event.target).attr('price')
+    var id = parseInt($(event.target).attr('id'))
+    console.log(id)
+    const weiValue = parseFloat(price) *10e17
     web3.eth.getAccounts(function(error, accounts) {
       if (error) {
         console.log(error);
       }
       var account = accounts[0];
-      console.log(App.contracts)
       App.contracts.MetaStore.deployed().then(function(instance) {
-        
         metaStoreInstance = instance
-        // Execute adopt as a transaction by sending account
-        return metaStoreInstance.buyProduct(price, {from: account});
+        // Execute buy as a transaction by sending account.
+        return metaStoreInstance.buyProduct(id, {from: account,  value: weiValue});
+          
       }).then(function(result) {
-        console.log(result)
+        console.log("result : "+result)
+        App.handleHistory();
         return App.showBalance();
       }).catch(function(err) {
         console.log(err.message);

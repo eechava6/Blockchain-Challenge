@@ -3,7 +3,7 @@
       "id": 0,
       "name": "Airpods",
       "picture": "images/airpods.jpg",
-      "price": "0.82"
+      "price": "1"
     },
     {
       "id": 1,
@@ -20,7 +20,7 @@
     {
       "id": 3,
       "name": "Pamu Slide",
-      "picture": "images/pamu.jpeg",
+      "picture": "images/pamu.png",
       "price":"0.342"
     },
     {
