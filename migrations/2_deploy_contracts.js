@@ -1,5 +1,5 @@
-var Adoption = artifacts.require("Adoption");
+var MetaStore = artifacts.require("MetaStore");
 
 module.exports = function(deployer){
-    deployer.deploy(Adoption);
+    deployer.deploy(MetaStore);
 }
