@@ -1,6 +1,6 @@
 # User stories: 
 ### (Ordered by relevance)
-### US1 -> A user can buy a product
+### US1 -> A user can buy a product. - DONE
 * Priority: 1
 * Requirements: -> Must be implemented with criptocurrency. 
                 -> A view to buy a product. 
