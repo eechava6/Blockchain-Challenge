@@ -27,7 +27,7 @@ Marketplace which accepts criptocurrency.
 
 This application used the following sources: 
 
-https://medium.com/zastrin/build-an-ethereum-dapp-using-ethers-js-c561f9c4dd2f
-https://www.trufflesuite.com/tutorials/pet-shop
-https://solidity.readthedocs.io/en/v0.4.24/introduction-to-smart-contracts.html
-https://www.codementor.io/rogargon/exercise-simple-solidity-smart-contract-for-ethereum-blockchain-m736khtby
+* https://medium.com/zastrin/build-an-ethereum-dapp-using-ethers-js-c561f9c4dd2f
+* https://www.trufflesuite.com/tutorials/pet-shop
+* https://solidity.readthedocs.io/en/v0.4.24/introduction-to-smart-contracts.html
+* https://www.codementor.io/rogargon/exercise-simple-solidity-smart-contract-for-ethereum-blockchain-m736khtby
