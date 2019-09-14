@@ -11,6 +11,7 @@ Marketplace which accepts criptocurrency.
 
 * NodeJs (NPM)
 * Metamask
+* CORS Policies plugin.(Since we are making request in a crossdomain from a localhost) (https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en-US)
 
 ### Installing the dependencies: 
 
@@ -26,7 +27,7 @@ Marketplace which accepts criptocurrency.
 *  Click in Metamask and connect to a custom RPC -> http://127.0.0.1:7545 
 * `truffle compile` (Compile .sol files) 
 * `truffle migrate` (Deploys contract to Ethereum network)
-* `npm run dev` (Run application on port 3000) 
+* `npm run dev` (Run application on port 3002) 
 
 This application used the following sources: 
 
