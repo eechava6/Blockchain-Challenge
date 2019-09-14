@@ -44,6 +44,13 @@ function openRegisterModal(){
     
 }
 
+function closeModals(){
+    
+    setTimeout(function(){
+        $('#loginModal').modal('hide');    
+    }, 230);
+    
+}
 function loginUser(){
     email = $('#emailLogin').val()
     pass = $('#passwordLogin').val()
@@ -57,8 +64,13 @@ function loginUser(){
     config = { headers: {'Content-Type': 'application/json'} };
     axios.post(url, params, config).then(res => { 
         if(res.status === 200){
-            console.log("OK")}
+            closeModals()
+            console.log("OK")
+            setCookie("username",email,30)
+            verifiyCookie();
+            }
     }).catch(error => {
+        console.log(error)
         shakeModal()
     })
 }
@@ -79,6 +91,7 @@ function registerUser(){
     axios.post(url, params, config).then(res => { 
         if(res.status === 200){
             console.log("OK")
+            closeModals()
         }else{
             shakeModal();
         }
@@ -96,4 +109,22 @@ function shakeModal(){
     }, 1000 ); 
 }
 
-   
+function verifiyCookie(){
+    user = getCookie("username")
+    console.log(user)
+    if(user){
+        
+        $('#logout').show()
+        $('#username').text(user)
+        $('#username').show();
+        return true;
+    }
+    return false; 
+}
+
+function closeSession (){
+    eraseCookie("username")
+    $('#logout').hide()
+    $('#username').hide();
+
+}

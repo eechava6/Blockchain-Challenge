@@ -101,6 +101,10 @@ App = {
   },
 
   handleBuy: function(event) {
+    if(!verifiyCookie()){
+      openLoginModal();
+      return false;
+    }
     event.preventDefault();
     var price = $(event.target).attr('price')
     var id = parseInt($(event.target).attr('id'))
@@ -134,6 +138,7 @@ App = {
 
 $(function() {
   $(window).load(function() {
+    verifiyCookie();
     App.init();
   });
 });
