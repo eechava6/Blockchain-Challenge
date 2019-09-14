@@ -11,6 +11,7 @@ Marketplace which accepts criptocurrency.
 
 * NodeJs (NPM)
 * Metamask
+* CORS Policies plugin.(Since we are making request in a crossdomain from a localhost) (https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en-US)
 
 ### Installing the dependencies: 
 
