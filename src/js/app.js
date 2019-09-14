@@ -84,7 +84,7 @@ App = {
   },
 
   handleHistory: function(event){
-    console.log("err here")
+
     App.contracts.MetaStore.deployed().then(function(instance) {
       metaStoreInstance = instance
       let transferEvent = metaStoreInstance.LogProductBought({}, {fromBlock: 0, toBlock: 'latest'})
@@ -104,7 +104,6 @@ App = {
     event.preventDefault();
     var price = $(event.target).attr('price')
     var id = parseInt($(event.target).attr('id'))
-    console.log(id)
     const weiValue = parseFloat(price) *10e17
     web3.eth.getAccounts(function(error, accounts) {
       if (error) {
@@ -118,6 +117,11 @@ App = {
           
       }).then(function(result) {
         console.log("result : "+result)
+
+      //Saving to DB          
+        var url = "http://localhost:3001/"
+        axios.get(url,param)
+        
         App.handleHistory();
         return App.showBalance();
       }).catch(function(err) {
@@ -134,16 +138,3 @@ $(function() {
   });
 });
 
-$(document).ready(function() {
-  $(document).delegate('.open', 'click', function(event){
-      $(this).addClass('oppenned');
-      event.stopPropagation();
-  })
-  $(document).delegate('body', 'click', function(event) {
-      $('.open').removeClass('oppenned');
-  })
-  $(document).delegate('.cls', 'click', function(event){
-      $('.open').removeClass('oppenned');
-      event.stopPropagation();
-  });
-});

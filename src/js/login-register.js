@@ -44,24 +44,52 @@ function openRegisterModal(){
     
 }
 
-function loginAjax(){
-    /*   Remove this comments when moving to server
-    $.post( "/login", function( data ) {
-            if(data == 1){
-                window.location.replace("/home");            
-            } else {
-                 shakeModal(); 
-            }
-        });
-    */
+function loginUser(){
+    email = $('#emailLogin').val()
+    pass = $('#passwordLogin').val()
+    if(email === "" || pass === ""){
+        console.log("pass err")
+        shakeModal()
+        return 403; 
+    }
+    var url = "http://127.0.0.1:9000/loginUser"
+    params ={"username":email, "password":pass}
+    config = { headers: {'Content-Type': 'application/json'} };
+    axios.post(url, params, config).then(res => { 
+        if(res.status === 200){
+            console.log("OK")}
+    }).catch(error => {
+        shakeModal()
+    })
+}
 
-/*   Simulate error message from the server   */
-     shakeModal();
+function registerUser(){
+    email = $('#emailRegister').val()
+    pass = $('#passwordRegister').val()
+    confirm = $('#passwordRegisterConfirm').val()
+    if(pass !== confirm || email === "" || pass === ""){
+        console.log("pass err")
+        shakeModal()
+        return 403; 
+    }
+    var url = "http://127.0.0.1:9000/registerUser"
+    params ={"username":email, "password":pass}
+    const config = { headers: {'Content-Type': 'application/json'} };
+
+    axios.post(url, params, config).then(res => { 
+        if(res.status === 200){
+            console.log("OK")
+        }else{
+            shakeModal();
+        }
+    }).catch(error => {
+        console.log('error', error);
+    })
 }
 
 function shakeModal(){
     $('#loginModal .modal-dialog').addClass('shake');
-             $('.error').addClass('alert alert-danger').html("Invalid email/password combination");
+             $('.error').addClass('alert alert-danger').html("Invalid data");
              $('input[type="password"]').val('');
              setTimeout( function(){ 
                 $('#loginModal .modal-dialog').removeClass('shake'); 

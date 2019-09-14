@@ -60,11 +60,6 @@
     </span>
     <span class="cls"></span>
   </div>
-
-    
-    
-
-
       <div class="container">
           <div class="row">
               <div class="col-sm-4"></div>
@@ -109,9 +104,9 @@
                                 <div class="error"></div>
                                 <div class="form loginBox">
                                     <form method="" action="" accept-charset="UTF-8">
-                                    <input id="email" class="form-control" type="text" placeholder="Email" name="email">
-                                    <input id="password" class="form-control" type="password" placeholder="Password" name="password">
-                                    <input class="btn btn-default btn-login" type="button" value="Login" onclick="loginAjax()">
+                                    <input id="emailLogin" class="form-control" type="text" placeholder="username" name="username">
+                                    <input id="passwordLogin" class="form-control" type="password" placeholder="Password" name="password">
+                                    <input class="btn btn-default btn-login" type="button" value="Login" onclick="loginUser()">
                                     </form>
                                 </div>
                              </div>
@@ -120,10 +115,10 @@
                             <div class="content registerBox" style="display:none;">
                              <div class="form">
                                 <form method="" html="{:multipart=>true}" data-remote="true" action="" accept-charset="UTF-8">
-                                <input id="email" class="form-control" type="text" placeholder="Email" name="email">
-                                <input id="password" class="form-control" type="password" placeholder="Password" name="password">
-                                <input id="password_confirmation" class="form-control" type="password" placeholder="Repeat Password" name="password_confirmation">
-                                <input class="btn btn-default btn-register" type="button" value="Create account" name="commit">
+                                <input id="emailRegister" class="form-control" type="text" placeholder="username" name="username">
+                                <input id="passwordRegister" class="form-control" type="password" placeholder="Password" name="password">
+                                <input id="passwordRegisterConfirm" class="form-control" type="password" placeholder="Repeat Password" name="password_confirmation">
+                                <input class="btn btn-default btn-register" type="button" value="Create account" onclick="registerUser()" name="commit">
                                 </form>
                                 </div>
                             </div>
@@ -146,11 +141,13 @@
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/web3.min.js"></script>
     <script src="js/truffle-contract.js"></script>
     <script src="js/login-register.js"></script>
+    <script src="js/navbar.js"></script>
     <script src="plugins/animated-text/animated-text.js"></script>
     <script src="js/app.js"></script>
   </body>
