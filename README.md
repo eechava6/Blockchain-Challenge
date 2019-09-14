@@ -27,6 +27,7 @@ Marketplace which accepts criptocurrency.
 *  Click in Metamask and connect to a custom RPC -> http://127.0.0.1:7545 
 * `truffle compile` (Compile .sol files) 
 * `truffle migrate` (Deploys contract to Ethereum network)
+*  Open CORS plugin and click "Enable cross-origin resource sharing"  
 * `npm run dev` (Run application on port 3002) 
 * `npm run back` (In another console to run the backend in port 9000) 
 
