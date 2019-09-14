@@ -28,6 +28,7 @@ Marketplace which accepts criptocurrency.
 * `truffle compile` (Compile .sol files) 
 * `truffle migrate` (Deploys contract to Ethereum network)
 * `npm run dev` (Run application on port 3002) 
+* `npm run back` (In another console to run the backend in port 9000) 
 
 This application used the following sources: 
 
