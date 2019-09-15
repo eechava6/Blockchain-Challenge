@@ -17,13 +17,18 @@
 * Priority: 1
 * Requirements: a view to log in.
 
-### US5 -> The favourites products and buying history of a user are persisted. 
+### US5 -> The favourites products and buying history of a user are persisted. - DONE
 * Priority 2
 * Requirements: -> The data is correctly saved
 
-### US6 -> A user has a buying cart
+### US6 -> A user can add a product to favourites - DONE
 * Priority: 3
 
-### US7 -> A user can add a product to favourites
+### US7 -> A user has a buying cart and can add products to it.
 * Priority: 3
 
+### US8 -> A user can pay all products in cart. 
+* Priority: 3
+
+### US9 -> A user can remove a product from favourites - 
+* Priority: 4
