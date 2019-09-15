@@ -137,20 +137,16 @@ App = {
   },
 
   handleBuyCart: function(){
-    if(!verifiyCookie()){
-      openLoginModal();
-      return false;
-    }
     buyer = getCookie("username")
     cartToBuy = getCookie(buyer)
     console.log(cartToBuy)
     if(cartToBuy){
       cartToBuy= JSON.parse(cartToBuy)
       var price = 0;
-      var strProducts = "";
+      
       for (i = 0; i <  cartToBuy.length; i++) {
         price += parseFloat($('.panel-pet').eq(cartToBuy[i]).find('button.btn-buy').attr('price'));
-        strProducts += cartToBuy[i].toString()
+        
       }
 
       Swal.fire(
@@ -162,7 +158,7 @@ App = {
         cancelButtonColor: '#d33',
         confirmButtonText: 'Yes, buy it!'}).then((result) => {
           if (result.value) {
-              return App.makeTransaction(parseInt(strProducts),price*10e17,true)
+              return App.makeTransaction(10,price*10e17,true)
           }})
     }else{
       Swal.fire("Add something to the cart!")
