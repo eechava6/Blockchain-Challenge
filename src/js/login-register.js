@@ -123,15 +123,17 @@ function verifiyCookie(){
         $('#username').text(user)
         $('#username').show();
         $('#history').show();   
+        $('#cart').show();
         return true;
     }
     return false; 
 }
 
 function closeSession (){
-    eraseCookie("username")
-    $('#logout').hide()
+    eraseCookie("username");
+    $('#logout').hide();
     $('#username').hide();
-    $('#history').hide()
+    $('#history').hide();
+    $('#cart').hide();
     clearFav();
 }

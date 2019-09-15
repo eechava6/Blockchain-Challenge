@@ -141,6 +141,11 @@ h6, .h6 {
   background: transparent;
 }
 
+.btn-cart {
+  color: #000;
+  background: transparent;
+}
+
 a {
   color: #000;
   transition: all .25s ease;
@@ -1027,6 +1032,19 @@ h1 {
   transform: scale(1.1);
 }
 
-.toppanel{
-  
+
+.swal2-popup {
+  display: none;
+  position: relative;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: center;
+  width: 32em;
+  max-width: 100%;
+  padding: 1.25em;
+  border: none;
+  border-radius: .3125em;
+  background: #fff;
+  font-family: inherit;
+  font-size: 2rem;
 }
