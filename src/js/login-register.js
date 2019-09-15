@@ -67,6 +67,7 @@ function loginUser(){
             closeModals()
             console.log("OK")
             setCookie("username",email,30)
+            App.verifyFavourites()
             verifiyCookie();
             }
     }).catch(error => {
@@ -75,6 +76,11 @@ function loginUser(){
     })
 }
 
+function clearFav(){
+    for (i = 0; i <=  7; i++) {
+        $('.panel-pet').eq(i).find('button.btn-fav').text('Add to fav!').attr('disabled', false);
+    }
+}
 function registerUser(){
     email = $('#emailRegister').val()
     pass = $('#passwordRegister').val()
@@ -102,7 +108,7 @@ function registerUser(){
 
 function shakeModal(){
     $('#loginModal .modal-dialog').addClass('shake');
-             $('.error').addClass('alert alert-danger').html("Invalid data");
+             $('.error').addClass('alert alert-danger').html("Invalid data (Or CORS?)");
              $('input[type="password"]').val('');
              setTimeout( function(){ 
                 $('#loginModal .modal-dialog').removeClass('shake'); 
@@ -110,8 +116,7 @@ function shakeModal(){
 }
 
 function verifiyCookie(){
-    user = getCookie("username")
-    console.log(user)
+    user = getCookie("username");
     if(user){
         
         $('#logout').show()
@@ -126,5 +131,5 @@ function closeSession (){
     eraseCookie("username")
     $('#logout').hide()
     $('#username').hide();
-
+    clearFav();
 }

@@ -16,11 +16,13 @@ App = {
         productTemplate.find('.product-price').text(data[i].price);
         productTemplate.find('.btn-buy').attr('price', data[i].price);
         productTemplate.find('.btn-buy').attr('id', data[i].id);
+        productTemplate.find('.btn-fav').attr('id', data[i].id);
         productsRow.append(productTemplate.html());
       }
     });
-
+   
     return await App.initWeb3();
+
   },
 
   initWeb3: async function() {
@@ -59,6 +61,7 @@ App = {
       App.contracts.MetaStore.setProvider(App.web3Provider);
     
       // Use our contract to retrieve and mark the buyed products. 
+      App.verifyFavourites()
       return App.showBalance();
     });
     return App.bindEvents();
@@ -66,10 +69,32 @@ App = {
 
   bindEvents: function() {
     $(document).on('click', '.btn-buy', App.handleBuy);
+    $(document).on('click', '.btn-fav', App.handleFav);
+  },
+
+  verifyFavourites: function(){
+    if(!verifiyCookie()){
+      return false;
+    }
+
+    var url = "http://127.0.0.1:9000/getFavourites"
+    params ={"username":getCookie("username")}
+   
+    const config = { headers: {'Content-Type': 'application/json'} };
+    axios.get(url, {params: params}, config).then(res => { 
+      if(res.status === 200){
+          products  =res.data.data
+          for (i = 0; i <=  products.length; i++) {
+              $('.panel-pet').eq(i).find('button.btn-fav').text('Already fav').attr('disabled', true);
+          }
+          
+          }
+    }).catch(error => {
+        console.log('error', error);
+    })
   },
 
   showBalance: function() {
-
     var metaStoreInstance;
 
     App.contracts.MetaStore.deployed().then(function(instance) {
@@ -82,7 +107,6 @@ App = {
       console.log(err.message);
     });
   },
-
   handleHistory: function(event){
 
     App.contracts.MetaStore.deployed().then(function(instance) {
@@ -98,6 +122,27 @@ App = {
     });
     
     });
+  },
+
+  handleFav: function(event){
+    if(!verifiyCookie()){
+      openLoginModal();
+      return false;
+    }
+    event.preventDefault();
+    var id = parseInt($(event.target).attr('id'))
+    var url = "http://127.0.0.1:9000/saveFavourite"
+    params ={"username":getCookie("username"), "productId":id}
+    console.log(params)
+    const config = { headers: {'Content-Type': 'application/json'} };
+
+    axios.post(url, params, config).then(res => { 
+        if(res.status === 200){
+            console.log("OK")
+          }
+    }).catch(error => {
+        console.log('error', error);
+    })
   },
 
   handleBuy: function(event) {
@@ -121,11 +166,7 @@ App = {
           
       }).then(function(result) {
         console.log("result : "+result)
-
-      //Saving to DB          
-        var url = "http://localhost:3001/"
-        axios.get(url,param)
-        
+      //Saving to DB                  
         App.handleHistory();
         return App.showBalance();
       }).catch(function(err) {

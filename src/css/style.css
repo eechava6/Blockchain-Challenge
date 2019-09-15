@@ -20,6 +20,7 @@ body {
   letter-spacing: 0.166667px;
   line-height: 1.7em;
   color: #000000;
+  background:#ddd;
 }
 
 p {
@@ -129,6 +130,11 @@ h6, .h6 {
 .btn-white:hover {
   background: transparent;
   color: #fff;
+}
+
+.btn-fav {
+  color: #000;
+  background: transparent;
 }
 
 a {
