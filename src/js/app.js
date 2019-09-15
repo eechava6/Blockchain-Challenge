@@ -143,6 +143,7 @@ App = {
     }
     buyer = getCookie("username")
     cartToBuy = getCookie(buyer)
+    console.log(cartToBuy)
     if(cartToBuy){
       cartToBuy= JSON.parse(cartToBuy)
       var price = 0;
@@ -154,7 +155,7 @@ App = {
 
       Swal.fire(
         {text:"You are going to buy : "
-        +cartToBuy.length+" produtcs, for : " +price+" ETH",
+        +cartToBuy.length+" products, for : " +price+" ETH",
         title:"Confirm purchase",
         showCancelButton: true,
         confirmButtonColor: '#3085d6',

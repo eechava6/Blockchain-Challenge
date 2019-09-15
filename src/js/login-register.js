@@ -124,9 +124,15 @@ function verifiyCookie(){
         $('#username').show();
         $('#history').show();   
         $('#cart').show();
+        $('#clear').show()
         return true;
     }
     return false; 
+}
+
+function clearCart(){
+    user = getCookie("username");
+    eraseCookie(user);
 }
 
 function closeSession (){
@@ -135,5 +141,6 @@ function closeSession (){
     $('#username').hide();
     $('#history').hide();
     $('#cart').hide();
+    $('#clear').hide();
     clearFav();
 }

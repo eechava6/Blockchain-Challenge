@@ -30,7 +30,8 @@
       
       <a id="logout" class="h6 active toppanel" style="float:right;padding: 30px; padding-right: 250px;  display: none" onclick="closeSession()">Log out</a>
       <a id="cart" class="h6 active toppanel" style="float:right;padding: 30px; display: none" onclick="App.handleBuyCart()">Buy cart</a>
-      <a id="history" class="h6 active toppanel" style="float:right;padding: 30px; display: none" onclick="App.handleHistory()">Buy history</a>
+      <a id="clear" class="h6 active toppanel" style="float:right;padding: 30px; display: none" onclick="clearCart()">Clear cart</a>
+      
        <a id="username" class="h6 toppanel" style="float:right;padding: 30px;display: none;"></a>
   </ul>
     <div class="container">
@@ -61,7 +62,7 @@
           <a  data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();">Register</a>
         </li>
         <li>
-            <a >My account</a>
+            <a id="history" href="javascript:void(0)" class="h6 active toppanel" style="display: none" onclick="App.handleHistory()">Buy history</a>
         </li>
 
       </ul>
