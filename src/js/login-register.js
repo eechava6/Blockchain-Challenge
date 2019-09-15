@@ -122,6 +122,7 @@ function verifiyCookie(){
         $('#logout').show()
         $('#username').text(user)
         $('#username').show();
+        $('#history').show();   
         return true;
     }
     return false; 
@@ -131,5 +132,6 @@ function closeSession (){
     eraseCookie("username")
     $('#logout').hide()
     $('#username').hide();
+    $('#history').hide()
     clearFav();
 }

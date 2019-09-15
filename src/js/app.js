@@ -115,7 +115,14 @@ App = {
       transferEvent.get((error, logs) => {
       // print the logs
       console.log("HISTORY")
-      logs.forEach(log => console.log(log.args))
+ 
+
+      var history =""
+      logs.forEach(log => history += "Buyer: " + log.args.buyer + " Product: " + log.args.amount.c/10000)+ " ETH <br />";
+      Swal.fire({
+        title: "History",
+        html: history
+      });
       if(error){
         console.log(error)
       }
@@ -167,7 +174,6 @@ App = {
       }).then(function(result) {
         console.log("result : "+result)
       //Saving to DB                  
-        App.handleHistory();
         return App.showBalance();
       }).catch(function(err) {
         console.log(err.message);

@@ -95,8 +95,6 @@ function getFavourites(req,res,next){
 function removeFavourite(req,res,next){
 
 }
-
-router.post('/savePurchase', savePurchase);
 router.post('/loginUser', loginUser);
 router.post('/registerUser', registerUser);
 router.post('/saveFavourite', saveFavourite);
