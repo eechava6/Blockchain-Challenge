@@ -9,7 +9,7 @@ The following image is the proposed architecture
 * Lite Server -> Light server running the Front-end
 * Node / Express -> Server running the backend (Acts like an interface to persistence)
 
-### Servicios externos: 
+### External services: 
 
 * Mongo Atlas -> No SQL database for users management and favourite products management.
 * Metamask -> Interface for Ethereum. 
