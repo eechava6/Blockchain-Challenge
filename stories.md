@@ -24,11 +24,14 @@
 ### US6 -> A user can add a product to favourites - DONE
 * Priority: 3
 
-### US7 -> A user has a buying cart and can add products to it.
+### US7 -> A user has a buying cart and can add products to it. DONE
 * Priority: 3
 
-### US8 -> A user can pay all products in cart. 
-* Priority: 3
+### US8 -> A user can pay all products in cart. DONE 
+* Priority: 3 
 
 ### US9 -> A user can remove a product from favourites - 
+* Priority: 4
+
+### US9 -> A user can clear a cart - 
 * Priority: 4
