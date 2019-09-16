@@ -30,8 +30,11 @@
 ### US8 -> A user can pay all products in cart. DONE 
 * Priority: 3 
 
-### US9 -> A user can remove a product from favourites - 
+### US9 -> A user can clear a cart - DONE
 * Priority: 4
 
-### US9 -> A user can clear a cart - 
+### US10 -> A user can see the buy history.
+
+### US11 -> A user can remove a product from favourites - 
 * Priority: 4
+
