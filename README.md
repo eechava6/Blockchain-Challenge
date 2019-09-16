@@ -29,7 +29,7 @@ Marketplace which accepts criptocurrency.
 *  Click in Metamask and connect to a custom RPC -> http://127.0.0.1:7545 
 * `truffle compile` (Compile .sol files) 
 * `truffle migrate` (Deploys contract to Ethereum network)
-*  Open CORS plugin and click "Enable cross-origin resource sharing"  
+*  Open CORS plugin and click "Enable cross-origin resource sharing"  (If you're running the app in the latest chrome version 2019-08-15 plugins won't work, then you have to run chrome without web securiy with the following command for Os x `open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="~/Library/Application Support/Google/Chrome" --disable-web-security` ) See more -> https://alfilatov.com/posts/run-chrome-without-cors/
 * `npm run dev` (Run application on port 3002) 
 * `npm run back` (In another console to run the backend in port 9000) 
 
