@@ -13,6 +13,8 @@ Marketplace which accepts criptocurrency.
 * Metamask
 * CORS Policies plugin.(Since we are making request in a crossdomain from a localhost) (https://chrome.google.com/webstore/detail/moesif-orign-cors-changer/digfbfaphojjndkpccljibejjbppifbc?hl=en)
 
+(You can also run chrome with web security disabled)
+
 ### Installing the dependencies: 
 
 * `npm i -g ganacha-cli` (In-memory blockchain)
